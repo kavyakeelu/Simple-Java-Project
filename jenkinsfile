@@ -2,9 +2,19 @@ pipeline {
     agent any
 
     stages {
-        stage('KKK Example') {
+        stage('1, KKK Example') {
             steps {
                 sh 'mvn --version'
+            }
+        }
+        stage('2, Maven build'){
+        steps {
+                sh mvn install -DskipTests
+            }
+        }
+        stage('3, Maven compiling'){
+        steps {
+                sh mvn compile
             }
         }
     }
