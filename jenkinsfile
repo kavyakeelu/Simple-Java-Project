@@ -7,15 +7,22 @@ pipeline {
                 sh 'mvn --version'
             }
         }
-        stage('User Confirmation') {
+        
+        
+        stage('User confirmation') {
             input {
                 message "Should we continue?"
                 ok "Yes, we should."
-                submitter "KK,bob"
+                submitter "alice,bob"
                 parameters {
                     string(name: 'PERSON', defaultValue: 'Mr Jenkins', description: 'Who should I say hello to?')
                 }
             }
+            steps {
+                echo "Hello, ${PERSON}, nice to meet you."
+            }
+        }
+            
         
         stage('2.Maven build'){
         steps {
