@@ -1,23 +1,23 @@
 pipeline {
     agent any
 tools {
-        maven 'Maven 3.0.5'
+        maven 'Maven 3.3.9'
         jdk 'jdk8'
     }
     stages {
-        stage('1, KKK Example') {
+        stage('1, test proj') {
             steps {
                 sh 'mvn --version'
             }
         }
         stage('2, Maven build'){
         steps {
-                sh mvn install -DskipTests
+                sh 'mvn install -DskipTests'
             }
         }
         stage('3, Maven compiling'){
         steps {
-                sh mvn compile
+                sh 'mvn compile'
             }
         }
     }
