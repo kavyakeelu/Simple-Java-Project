@@ -2,19 +2,21 @@ pipeline {
     agent any
 
     stages {
-        stage('1, test proj') {
+        stage('1. print mvn version') {
             steps {
                 sh 'mvn --version'
             }
         }
-        stage('2, Maven build'){
+        stage('2.Maven build'){
         steps {
                 sh 'mvn install -DskipTests'
+                echo "mvn installed/called"
             }
         }
-        stage('3, Maven compiling'){
+        stage('3.Maven compiling'){
         steps {
                 sh 'mvn compile'
+                echo "Source code compiled successfully"
             }
         }
     }
