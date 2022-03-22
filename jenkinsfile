@@ -7,7 +7,6 @@ pipeline {
         stage('KKK Example') {
             steps {
                 sh 'mvn --version'
-                echo "hello this is your job"
             }
         }
     }
