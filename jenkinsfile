@@ -14,7 +14,7 @@ pipeline {
                 message "Do you like to continue??"
                 ok "Yes"               
                 parameters {
-                    string(name: 'PERSON', defaultValue: 'Mr Siva', description: 'Who should I say hello to?')
+                    string(name: 'PERSON', defaultValue: 'Mr Siva', description: 'click abort if u dont want')
                 }
             }
             steps {
